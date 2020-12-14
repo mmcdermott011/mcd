@@ -100,7 +100,7 @@ export default class App extends Component {
         sync: false
       },
       random: true,
-      value: 1
+      value: 2
     }
   },
   polygon: {
@@ -113,7 +113,7 @@ export default class App extends Component {
       radius: 10
     },
     inlineArrangement: "equidistant",
-    scale:1,
+    scale:2,
     type: "inline",
     // url: "../../static/mysite/images/human-skull.svg"
   }
