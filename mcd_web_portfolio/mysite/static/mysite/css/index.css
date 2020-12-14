@@ -16,11 +16,14 @@ a {
 a:hover {
     color:mediumpurple;
 }
-/*#main {*/
-/*width: 100%;*/
-/*left:0;*/
-/*top:0;*/
-/*}*/
+
+#keyword {
+    color:mediumpurple;
+}
+
+h1 {
+    margin:20px;
+}
 
 #avatar {
  z-index: 100;
@@ -30,9 +33,9 @@ a:hover {
 }
 
 #avatar:hover {
-transform: rotate(30deg) scale(1.3);
-  -ms-transform: rotate(30deg) scale(1.3);
-  -webkit-transform: rotate(30deg) scale(1.3);
+transform: rotate(20deg) scale(1.3);
+  -ms-transform: rotate(20deg) scale(1.3);
+  -webkit-transform: rotate(20deg) scale(1.3);
     transition: 0.3s;
 }
 
@@ -41,7 +44,6 @@ transform: rotate(30deg) scale(1.3);
     height:100%;
     padding:30px;
     margin: 10px;
-
     height: auto;
     position: relative;
     z-index: 1;
@@ -52,8 +54,7 @@ transform: rotate(30deg) scale(1.3);
     z-index: 1;
     padding: 30px;
     margin: 10px;
-
-        /*display: inline-block;*/
+    /*display: inline-block;*/
 }
 
   ---- reset ----
@@ -72,7 +73,6 @@ body {
 }
 
 section .reveal {
-
     color: yellow;
 
 }
