@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,12 +22,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'secret'
+SECRET_KEY = str(os.getenv('DJANGO_SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = bool(os.getenv('DJANGO_DEBUG'))
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1', 'https://mcd-web-portfolio.herokuapp.com']
 
 
 # Application definition
@@ -74,14 +76,26 @@ WSGI_APPLICATION = 'mcd_web_portfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'NAME': 'postgres',
+    #     'USER': 'postgres',
+    #     'PASSWORD': str(os.getenv('DJANGO_DB_PW')),
+    #     'HOST': 'postgres://zcpulyaylnaqhp:85bd84ffe322da7f6c056d99b8e001afa0f103e612fa9377ad18cae5220852ec@ec2-3-220-98-137.compute-1.amazonaws.com:5432/d1lmvmclk219pc',
+    #     'PORT': 5432,
+    # }
 }
-
-
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=600, default='postgres://zcpulyaylnaqhp:85bd84ffe322da7f6c056d99b8e001afa0f103e612fa9377ad18cae5220852ec@ec2-3-220-98-137.compute-1.amazonaws.com:5432/d1lmvmclk219pc')
+DATABASES['default'] = db_from_env
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 

@@ -1,2 +1,0 @@
-# mcd
-Personal Website
