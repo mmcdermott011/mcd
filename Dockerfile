@@ -7,7 +7,7 @@ WORKDIR /mcd
 
 ## Add current directory code to working directory
 #ADD . /mcd/
-COPY requirements.txt /mcd/
+COPY requirements.txt /mcd/requirements.txt
 
 # set default environment variables
 ENV PYTHONUNBUFFERED 1
@@ -17,7 +17,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 # set project environment variables
 # grab these via Python's os.environ
 # these are 100% optional here
-ENV PORT=8000
+#ENV PORT=8000
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -45,6 +45,8 @@ COPY . .
 #RUN adduser myuser
 #USER myuser
 
-EXPOSE $PORT
+#EXPOSE $PORT
 #CMD gunicorn cfehome.wsgi:application --bind 0.0.0.0:$PORT
-CMD python3 ./mcd_web_portfolio/manage.py runserver $PORT
+#CMD python3 ./mcd_web_portfolio/manage.py runserver 0.0.0.0:$PORT
+
+CMD gunicorn core.wsgi:application --bind 0.0.0.0:$PORT

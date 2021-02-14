@@ -3,4 +3,4 @@ Django>=3.0,<4.0
 psycopg2
 gunicorn
 dj-database-url
-dotenv
+python-dotenv
