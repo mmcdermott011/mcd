@@ -49,4 +49,4 @@ COPY . .
 #CMD gunicorn cfehome.wsgi:application --bind 0.0.0.0:$PORT
 #CMD python3 ./mcd_web_portfolio/manage.py runserver 0.0.0.0:$PORT
 
-CMD gunicorn mcd_web_portfolio/mcd_web_portfolio.wsgi:application --bind 0.0.0.0:$PORT
+CMD gunicorn mcd_web_portfolio.mcd_web_portfolio.wsgi:application --bind 0.0.0.0:$PORT
