@@ -10,7 +10,7 @@ https://docs.djangoproject.com/en/3.0/howto/deployment/wsgi/
 import os
 
 from django.core.wsgi import get_wsgi_application
-
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mcd_web_portfolio.mcd_web_portfolio.settings')
+print(os.path.curdir)
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mcd_web_portfolio.settings')
 
 application = get_wsgi_application()

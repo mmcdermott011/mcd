@@ -17,7 +17,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 # set project environment variables
 # grab these via Python's os.environ
 # these are 100% optional here
-#ENV PORT=8000
+ENV PORT=8000
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -45,8 +45,8 @@ COPY . .
 #RUN adduser myuser
 #USER myuser
 
-#EXPOSE $PORT
-#CMD gunicorn cfehome.wsgi:application --bind 0.0.0.0:$PORT
+EXPOSE $PORT
 #CMD python3 ./mcd_web_portfolio/manage.py runserver 0.0.0.0:$PORT
-
-CMD gunicorn mcd_web_portfolio.mcd_web_portfolio.wsgi:application --bind 0.0.0.0:$PORT
+CMD cd mcd_web_portfolio/
+WORKDIR /mcd/mcd_web_portfolio
+CMD gunicorn mcd_web_portfolio.wsgi:application --bind 0.0.0.0:$PORT
