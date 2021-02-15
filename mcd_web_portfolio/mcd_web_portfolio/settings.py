@@ -27,7 +27,7 @@ SECRET_KEY = str(os.getenv('DJANGO_SECRET_KEY'))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(os.getenv('DJANGO_DEBUG'))
 
-ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1', 'https://mcd-web-portfolio.herokuapp.com']
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1', 'mcd-web-portfolio.herokuapp.com']
 
 
 # Application definition
