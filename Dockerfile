@@ -49,5 +49,5 @@ COPY . .
 #CMD python3 ./mcd_web_portfolio/manage.py runserver 0.0.0.0:$PORT
 CMD cd mcd_web_portfolio/
 WORKDIR /mcd/mcd_web_portfolio
-CMD python3 ./mcd_web_portfolio/manage.py collectstatic
+CMD python3 ./manage.py collectstatic --noinput
 CMD gunicorn mcd_web_portfolio.wsgi:application --bind 0.0.0.0:$PORT
