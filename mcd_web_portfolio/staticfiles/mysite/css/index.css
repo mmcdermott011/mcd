@@ -1,0 +1,105 @@
+html, body {
+  background-color: #323031;
+
+height: 100%;
+    margin: 0;
+    padding: 0;
+    color: #eceaf6;
+    font-family: 'Noto Sans TC', sans-serif;
+    text-align: center;
+    font-size: large;
+}
+
+a {
+    color:mediumaquamarine;
+}
+a:hover {
+    color:mediumpurple;
+    transition: 0.5s;
+}
+
+#keyword {
+    color:mediumpurple;
+
+}
+
+h1 {
+    margin:10px;
+}
+
+#avatar {
+ z-index: 100;
+  -webkit-transition: -webkit-transform .3s ease-in-out;
+  -ms-transition: -ms-transform .3s ease-in-out;
+  transition: transform .3s ease-in-out;
+    margin-top: 30px;
+}
+
+#avatar:hover {
+transform: rotate(20deg) scale(1.2);
+  -ms-transform: rotate(20deg) scale(1.2);
+  -webkit-transform: rotate(20deg) scale(1.2);
+    transition: 0.3s;
+}
+
+#Greeting {
+    width: 100%;
+    height:100%;
+    height: auto;
+    position: relative;
+    padding: 20px;
+    margin: 20px;
+    z-index: 1;
+    /*display: inline-block;*/
+}
+#Bio {
+    position:relative ;
+    z-index: 1;
+    padding: 20px;
+    margin: 20px;
+    margin-top: 80px;
+
+    /*display: inline-block;*/
+}
+
+  ---- reset ----
+body {
+  margin: 0;
+  font: normal 75% Arial, Helvetica, sans-serif;
+}
+
+/* ---- tsparticles container ---- */
+#tsparticles {
+  position: absolute;
+    width: 100%;
+    z-index: -1;
+    display: block;
+    opacity: 75%;
+}
+
+.reveal {
+        animation:showup 3s;
+
+}
+
+
+@keyframes showup {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@keyframes slidein {
+    0% { margin-left:-800px; }
+    20% { margin-left:-800px; }
+    35% { margin-left:0px; }
+    100% { margin-left:0px; }
+}
+
+@keyframes reveal {
+    0% {opacity:0;width:0px;}
+    20% {opacity:1;width:0px;}
+    30% {width:355px;}
+    80% {opacity:1;}
+    100% {opacity:0;width:355px;}
+}
+

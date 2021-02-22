@@ -1,0 +1,20 @@
+
+
+.card-deck {
+    margin: 40px;
+    color: white;
+}
+
+.card{
+        background-color: #323031;
+}
+
+.card-deck :hover{
+    transform: scale(1.01);
+}
+
+.card-title {
+    color: mediumpurple;
+    font-size: larger;
+    font-family: bold;
+}
