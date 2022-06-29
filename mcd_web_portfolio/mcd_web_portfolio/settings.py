@@ -79,23 +79,7 @@ WSGI_APPLICATION = 'mcd_web_portfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
-
-DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql',
-    #     'NAME': 'postgres',
-    #     'USER': 'postgres',
-    #     'PASSWORD': str(os.getenv('DJANGO_DB_PW')),
-    #     'HOST': 'postgres://zcpulyaylnaqhp:85bd84ffe322da7f6c056d99b8e001afa0f103e612fa9377ad18cae5220852ec@ec2-3-220-98-137.compute-1.amazonaws.com:5432/d1lmvmclk219pc',
-    #     'PORT': 5432,
-    # }
-}
+DATABASES = {}
 import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=600, default='postgres://zcpulyaylnaqhp:85bd84ffe322da7f6c056d99b8e001afa0f103e612fa9377ad18cae5220852ec@ec2-3-220-98-137.compute-1.amazonaws.com:5432/d1lmvmclk219pc')
 DATABASES['default'] = db_from_env
